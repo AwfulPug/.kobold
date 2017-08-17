@@ -2,6 +2,7 @@ import discord
 import random
 import re
 from discord.ext import commands as kobold
+import datetime
 
 class Basic:
 
@@ -17,8 +18,8 @@ class Basic:
         await self.kobold.say(embed=embed)
  #       await self.kobold.say("Hello " + ctx.message.author.mention + ", how are you today?")
 
-    @kobold.command()
-    async def roll(self,dice:str="1d4",bonus:str="0"):
+    @kobold.command(pass_context=True)
+    async def roll(self,ctx,dice:str="1d4",bonus:str="0"):
         """Roll : rolls a dice type the user inputs in a 1d4 format
            and adds/subtracts bonuses from the roll.Prints out into
            the text channel the command was invoked. Default die is
@@ -33,6 +34,7 @@ class Basic:
         embed.add_field(name="Total",value=r.total_amount)
         embed.add_field(name="Crit Success", value=str(r.crit_success))
         embed.add_field(name="Crit Fails",value=str(r.crit_fail))
+        embed.timestamp = ctx.message.timestamp
         await self.kobold.say(embed=embed)
 
     @kobold.command(pass_context=True)
