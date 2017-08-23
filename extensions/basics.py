@@ -11,16 +11,15 @@ class Basic:
 
     @kobold.command(pass_context=True)
     async def hello(self,ctx):
-        """Hello : .kobold greets the user that calls the command."""
+        """kobold greets the user that calls the command."""
         embed = discord.Embed(colour=discord.Color.blue())
-        embed.title = "Greetings"
         embed.add_field(name="Greeting", value="Hello " + ctx.message.author.mention + ", how are you today?")
         await self.kobold.say(embed=embed)
  #       await self.kobold.say("Hello " + ctx.message.author.mention + ", how are you today?")
 
     @kobold.command(pass_context=True)
     async def roll(self,ctx,dice:str="1d4",bonus:str="0"):
-        """Roll : rolls a dice type the user inputs in a 1d4 format
+        """rolls a dice type the user inputs in a 1d4 format
            and adds/subtracts bonuses from the roll.Prints out into
            the text channel the command was invoked. Default die is
            1d4 and bonus default is 0."""
@@ -39,7 +38,7 @@ class Basic:
 
     @kobold.command(pass_context=True)
     async def dmroll(self,ctx,dice:str="1d4",bonus:str="0"):
-        """Dmroll : rolls a dice type the user inputs in a 1d4 format
+        """rolls a dice type the user inputs in a 1d4 format
            and adds/subtracts bonuses from the roll and send the result
            directly to the user. Perfect for behind the screen rolls.
            Default die is 1d4 and bonus default is 0."""
@@ -58,6 +57,7 @@ class Basic:
 
     @kobold.command()
     async def coinflip(self):
+        """Flips a coin and returns the face that was up."""
         coinflip = ("Heads","Tails")
         await self.kobold.say(random.choice(coinflip))
 
