@@ -25,5 +25,5 @@ async def on_ready():
         except Exception as x:
             exc= "{}:{}".format(type(x).__name__,x)
             print("Unable to load extension {}\n{}".format(extension,exc))
-
-kobold.run('MzQ1NzA5NzQ1MDc4MDA5ODU2.DG_O3w.w8HFMcHSTG0whozlZBqTP8v2xj0')
+key = " "
+kobold.run(key)
