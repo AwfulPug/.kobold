@@ -6,7 +6,6 @@ Kobold is built using the [discord.py libraries](https://github.com/Rapptz/disco
 
 ## Requirements to Run
 - Python 3.6.5+
-- `numpy` library
 - `discord.py` library
 
 ### Known Issues
