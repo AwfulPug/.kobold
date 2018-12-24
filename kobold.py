@@ -1,4 +1,3 @@
-import asyncio
 import discord
 from discord.ext import commands
 
@@ -28,6 +27,5 @@ async def on_ready():
         except Exception as x:
             exc = "{}:{}".format(type(x).__name__, x)
             print("Unable to load extension {}\n{}".format(extension, exc))
-
     print("==============\nApplication Online and Running")
 kobold.run(key)
