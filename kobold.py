@@ -5,7 +5,7 @@ from discord.ext import commands
 description = "A discord bot to assist with pen and paper roleplaying games."
 command_prefix = "."
 extensions = {
-    "extensions.basics",
+    "extensions.dice",
     "extensions.spells"
 }
 kobold = commands.Bot(description=description,command_prefix=command_prefix)
@@ -23,7 +23,7 @@ async def on_ready():
             kobold.load_extension(extension)
     # If an exception is thrown, that exception is bound to the variable e.
         except Exception as x:
-            exc= "{}:{}".format(type(x).__name__,x)
-            print("Unable to load extension {}\n{}".format(extension,exc))
-key = " "
+            exc = "{}:{}".format(type(x).__name__,x)
+            print("Unable to load extension {}\n{}".format(extension, exc))
+key = "NDIzMjQyNTk0ODU2OTkyNzg4.DwItmA.oYn8aBJeVhib5DBCEjccb1J5oBA"
 kobold.run(key)
